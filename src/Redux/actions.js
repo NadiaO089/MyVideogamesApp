@@ -10,7 +10,7 @@ export const loading = () => {
 export const getVideogames = () => {
     return function (dispatch) {
         dispatch(loading());
-        return axios.get(`http://localhost:3001/videogames`)
+        return axios.get(`/videogames`)
             .then(response => {
                 dispatch({
                     type: GET_VIDEOGAMES,
@@ -24,7 +24,7 @@ export const getVideogames = () => {
 export const getVideogamesByName = (name) => {
     return function (dispatch) {
         dispatch(loading());
-        return axios.get(`http://localhost:3001/videogames?name=${name}`)
+        return axios.get(`/videogames?name=${name}`)
             .then(response => {
                 dispatch({
                     type: GET_VIDEOGAMES_BY_NAME,
@@ -37,7 +37,7 @@ export const getVideogamesByName = (name) => {
 
 export const getGenres = () => {
     return function (dispatch) {
-        return axios.get('http://localhost:3001/genres')
+        return axios.get('/genres')
             .then(response => {
                 dispatch({
                     type: GET_GENRES,
@@ -51,7 +51,7 @@ export const getGenres = () => {
 export const getVideogameDetail = (id) => {
     return function (dispatch) {
         dispatch(loading());
-        return axios.get(`http://localhost:3001/videogame/${id}`)
+        return axios.get(`/videogame/${id}`)
             .then(response => {
                 dispatch({
                     type: GET_VIDEOGAME_DETAIL,
@@ -70,7 +70,7 @@ export const clearDetail = () => {
 
 export const create = (body) => {
     return function (dispatch) {
-        return axios.post('http://localhost:3001/videogames', body)
+        return axios.post('/videogames', body)
             .then(response => {
                 dispatch({
                     type: CREATE,
@@ -122,7 +122,7 @@ export const Delete = (id) => {
     
     if (typeof id === 'string') {
         return function(dispatch){
-            return axios.delete(`http://localhost:3001/videogame/${id}`)
+            return axios.delete(`/videogame/${id}`)
             .then(response => {
                 dispatch({
                     type: DELETE,
