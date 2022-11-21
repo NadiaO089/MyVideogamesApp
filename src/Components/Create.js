@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { create, getGenres, clearDetail } from '../Redux/actions';
+import { create, getGenres } from '../Redux/actions';
 import NavBar from './NavBar';
-import Created from './Created';
 import s from '../Styles/Create.module.css';
 
 function Create () {
@@ -17,7 +16,7 @@ function Create () {
 
     useEffect(()=> {
         dispatch(getGenres());
-    },[]);
+   },[dispatch]);
 
     const inicialState = {
         name:'',
@@ -154,7 +153,7 @@ function Create () {
                        [e.target.name]:''
                    })
                }   
-           let genreName = genres.filter(g => g.id == e.target.value)
+           let genreName = genres.filter(g => g.id.toString() === e.target.value)
            setGenre(genreName[0]);
         }
 
@@ -248,7 +247,7 @@ function Create () {
                 <label className={s.subtitle}>Genres:</label> {input.genres?.map(g => (
                     <p>{g.name}</p>
                 ))}
-                <select className={s.search} defaultValue='choose' name='genres'  focus onClick={(e) => validateGenres(e)}>
+                <select className={s.search} defaultValue='choose' name='genres'  focus='true' onClick={(e) => validateGenres(e)}>
                 <option className={s.option} value='choose'>Choose your genres</option>
                 {genres?.map((g) => (
                 <option className={s.option} key={g.id} value={g.id}>{g.name}</option>

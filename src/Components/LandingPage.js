@@ -5,13 +5,14 @@ import { getGenres, getVideogames } from '../Redux/actions';
 import s from '../Styles/Landing.module.css';
 
 
-function LandingPage () {
 
-    const dispatch = useDispatch();
+function LandingPage () {
+    
+const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(getGenres());    
-    },[]);
+    },[dispatch]);
 
     const handlerClick = (e) => {
         dispatch(getVideogames());

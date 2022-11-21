@@ -19,7 +19,7 @@ const history = useHistory();
 useEffect(() => {
    dispatch(getVideogameDetail(idVideogame))
    return () => dispatch(clearDetail())
-}, [])
+}, [dispatch, idVideogame])
 
     return (
         <div>
@@ -34,7 +34,7 @@ useEffect(() => {
             {loading? <img className={s.img} src='https://forum.defold.com/uploads/default/original/2X/5/5eb75eb38637375a13384195971eee34e22f15a6.gif' alt= 'Loading...'/>
         : <div className={s.container} key={detail.id}>
 
-            <img className={s.imgDetail} src={detail.background_image} alt='background image'/>  
+            <img className={s.imgDetail} src={detail.background_image} alt='background'/>  
             <div className={s.container1}>
             <h2 className={s.title}>{detail.name}</h2>
             <h4 className={s.text}>Description: </h4>

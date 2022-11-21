@@ -6,12 +6,14 @@ const byGenre = (array, genre) => {
 let filterByGenre = [];
 
     array.map(e => {
+        return (
         e.genres.map(g => {
             if(g.name === genre){
-             filterByGenre.push(e)
+             filterByGenre.push(e);
             }
-        })
-    });
+        return filterByGenre;
+    })
+    )});
 
     return filterByGenre;
 }

@@ -90,7 +90,7 @@ function Pagination () {
                 <div className={s.container}>
                     <input className={s.button} type='button' onClick={(e)=>handlerRestart(e)} value='Restart' />
                 <span className={s.title}>Order By</span>
-                    <select className={s.search} name='order' focus onChange={(e) => handlerOrder(e)}>
+                    <select className={s.search} name='order' focus='true' onChange={(e) => handlerOrder(e)}>
                         <option>{orderAndFilter.order}</option>
                         <option value='AtoZ'>A to Z</option>
                         <option value='ZtoA'>Z to A</option>
@@ -102,7 +102,7 @@ function Pagination () {
                     <span className={s.title}>Filters</span>
                 <div>
                     <label className={s.subtitle}>Genre</label>
-                    <select className={s.search} name='genre' focus onChange={(e) => handlerFilterGenres(e)}>
+                    <select className={s.search} name='genre' focus='true' onChange={(e) => handlerFilterGenres(e)}>
                         <option>{orderAndFilter.genre}</option>
                         <option value='all'>All Genres</option>
                         {genres?.map((g) => (
@@ -112,7 +112,7 @@ function Pagination () {
                 </div>
                 <div>
                     <label className={s.subtitle}>Source</label>
-                    <select className={s.search} name='source' focus onChange={(e) => handlerFilterSource(e)}>
+                    <select className={s.search} name='source' focus='true' onChange={(e) => handlerFilterSource(e)}>
                             <option>{orderAndFilter.source}</option>
                             <option value='all'>All</option>
                             <option value='apis'>Api's</option>

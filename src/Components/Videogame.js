@@ -20,7 +20,7 @@ const dispatch = useDispatch();
             <input className={s.button} type='button' onClick={(e)=>handlerClick(e)} value='x' />
             </div>
             
-            <img className={s.img} src={props.background_image} alt='background image'/>
+            <img className={s.img} src={props.background_image} alt='background'/>
             <div className={s.container1}>
             <Link to={`/videogame/${props.id}`}><h2 className={s.title}>{props.name}</h2></Link>
             <div className={s.container2}>

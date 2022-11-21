@@ -1,17 +1,16 @@
 import React, {useEffect} from "react";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { getVideogames, clearDetail } from '../Redux/actions';
 import s from '../Styles/Created.module.css';
 
 function Created () {
 
-    const created = useSelector(state => state.detail);
     const dispatch = useDispatch();
 
     useEffect(() => {
         dispatch(clearDetail());
-    },[]);
+    },[dispatch]);
 
     const handlerOnClick = (e) => {
         dispatch(getVideogames());

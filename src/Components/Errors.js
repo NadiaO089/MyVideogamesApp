@@ -16,7 +16,7 @@ function Errors () {
             dispatch(clearErrors());
             history.push("/");
         }
-    },[]);
+    },[dispatch, history]);
     
     return (
         <div>

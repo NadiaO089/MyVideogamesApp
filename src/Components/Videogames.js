@@ -6,17 +6,16 @@ function Videogames (props) {
 
 const items = props.items.map(item => {
     return (
-    <div>
-    <Videogame 
-        key={item.id}
+        <Videogame 
+        key={item.id.toString()}
         id={item.id}
         name={item.name}
         background_image={item.background_image}
         genres={item.genres}
         rating={item.rating}
     />
-</div>)
-})
+    )
+});
 
     return (
         <div>
