@@ -1,0 +1,55 @@
+
+.container {
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content: space-evenly;
+   align-items: flex-start;
+    margin-top: 100px;
+    margin-left: 240px;
+}
+
+.container1 {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+
+    display: flex;
+    justify-content: flex-end;
+}
+
+.button {
+    background-color: white;
+    padding: 10px;
+    border-radius: 6px;
+    border-color: rgba(255, 255, 255, 0.651);
+    color: black;
+
+    font-family: helvetica;
+    font-size: 15px;
+    font-weight: 200;
+    color: black;
+    letter-spacing: 2px;
+
+    width: 80px;
+    height: 40px;
+
+    cursor: pointer;
+}
+
+.button:hover{
+    background-color: black;
+    border-color: white;
+    color: white;
+}
+
+.text{
+    display: flex;
+    margin-left: 20px;
+    margin-right: 20px;
+    font-family: helvetica;
+    font-size: 15px;
+    font-weight: 200;
+    color: black;
+    letter-spacing: 2px;
+}
